@@ -1,0 +1,43 @@
+User
+- Reviews
+- Real Name (private)
+- Username (public, unique)
+- Password (private)
+- Email
+- User Since
+- Groups
+- Twitter
+- Display image
+
+Review
+- Band
+- Album
+- Artwork
+- Reviewee (User)
+- Date
+- Link to twitter review
+- Rating
+
+Band
+- Bio
+- Albums
+- Sounds like
+- Reviewed By
+- Genres
+
+Album
+- Band
+- Tracklist
+- Where to get
+- Reviews
+- Genres
+
+Group
+- Group name
+- Group members
+- Reviews
+- Group image
+
+Genre 
+- Bands
+- Albums
