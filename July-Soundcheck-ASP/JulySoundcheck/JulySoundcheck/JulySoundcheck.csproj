@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201512211922556_AddReview.Designer.cs">
       <DependentUpon>201512211922556_AddReview.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512222154139_VirtualizeArtistInAlbum.cs" />
+    <Compile Include="Migrations\201512222154139_VirtualizeArtistInAlbum.Designer.cs">
+      <DependentUpon>201512222154139_VirtualizeArtistInAlbum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Album.cs" />
@@ -328,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512211922556_AddReview.resx">
       <DependentUpon>201512211922556_AddReview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512222154139_VirtualizeArtistInAlbum.resx">
+      <DependentUpon>201512222154139_VirtualizeArtistInAlbum.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

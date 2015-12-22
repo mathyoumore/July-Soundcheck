@@ -17,7 +17,11 @@
         <dd>
             @Html.DisplayFor(model => model.AlbumName)
         </dd>
-
+        <dt>
+            <dd>
+                @Html.ActionLink(Model.Artist.ArtistName, "Details",new { id = Model.Artist.ArtistId }, "Artists")
+            </dd>
+        </dt>
     </dl>
 </div>
 <p>

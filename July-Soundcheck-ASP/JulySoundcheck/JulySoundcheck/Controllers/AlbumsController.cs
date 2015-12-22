@@ -15,9 +15,33 @@ namespace JulySoundcheck.Controllers
         private JulySoundcheckContext db = new JulySoundcheckContext();
 
         // GET: Albums
-        public ActionResult Index()
+       /* public ActionResult Index()
         {
-            return View(db.Albums.ToList());
+            return View(db.Albums.OrderBy(s => s.Artist.ArtistName).ToList());
+        }*/
+
+        public ActionResult Index(string sortOrder)
+        {
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var albums = from s in db.Albums
+                           select s;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    albums = albums.OrderByDescending(s => s.AlbumName);
+                    break;
+                case "Artist":
+                    albums = albums.OrderBy(s => s.Artist.ArtistName);
+                    break;
+                case "artist_desc":
+                    albums = albums.OrderByDescending(s => s.Artist.ArtistName);
+                    break;
+                default:
+                    albums = albums.OrderBy(s => s.AlbumName);
+                    break;
+            }
+            return View(albums.ToList());
         }
 
         // GET: Albums/Details/5

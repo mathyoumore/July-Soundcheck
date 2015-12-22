@@ -23,6 +23,9 @@
             @Html.DisplayFor(modelItem => item.AlbumName)
         </td>
         <td>
+            @Html.ActionLink(item.Artist.ArtistName,"Index", new { id = item.Artist.ArtistId }, "Artists")
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
             @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })

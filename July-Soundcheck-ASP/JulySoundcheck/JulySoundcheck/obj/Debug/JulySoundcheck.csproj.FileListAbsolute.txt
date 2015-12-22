@@ -83,3 +83,4 @@ C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoun
 C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.InitialCreate.resources
 C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.csproj.GenerateResource.Cache
 C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.AddReview.resources
+C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.VirtualizeArtistInAlbum.resources

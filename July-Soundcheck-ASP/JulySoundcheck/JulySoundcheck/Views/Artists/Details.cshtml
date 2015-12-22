@@ -17,7 +17,12 @@
         <dd>
             @Html.DisplayFor(model => model.ArtistName)
         </dd>
-
+        @foreach (var album in Model.Albums)
+        {
+            <dd>
+                @Html.ActionLink(album.AlbumName,"Index","Albums")
+            </dd>
+        }
     </dl>
 </div>
 <p>

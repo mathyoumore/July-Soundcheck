@@ -17,7 +17,7 @@ namespace JulySoundcheck.Controllers
         // GET: Artists
         public ActionResult Index()
         {
-            return View(db.Artists.ToList());
+            return View(db.Artists.OrderBy(s => s.ArtistName).ToList());
         }
 
         // GET: Artists/Details/5
