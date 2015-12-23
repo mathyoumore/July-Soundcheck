@@ -11,25 +11,29 @@
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th class="col-md-4">
             @Html.DisplayNameFor(model => model.AlbumName)
         </th>
-        <th></th>
+        <th class="col-md-4"></th>
+        <th class="col-md-4">
+            @Html.DisplayNameFor(model => model.Artist.ArtistName)
+        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AlbumName)
+        <td class="col-md-4">
+            @Html.ActionLink(item.AlbumName, "Details", new { id = item.AlbumId })
         </td>
-        <td>
-            @Html.ActionLink(item.Artist.ArtistName,"Index", new { id = item.Artist.ArtistId }, "Artists")
+        <td class="col-md-4"></td>
+        <td class="col-md-4">
+            @Html.ActionLink(item.Artist.ArtistName, "Details", "Artists", new { id = item.Artist.ArtistId }, null)
         </td>
-        <td>
+       <!-- <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AlbumId }) |
             @Html.ActionLink("Details", "Details", new { id=item.AlbumId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.AlbumId })
-        </td>
+        </td>-->
     </tr>
 }
 

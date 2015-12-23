@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Album.AlbumName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RevieweeId)
+            @Html.DisplayNameFor(model => model.User.RealName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Rating)
@@ -35,7 +35,8 @@
             @Html.DisplayFor(modelItem => item.Album.AlbumName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RevieweeId)
+            @Html.DisplayFor(modelItem => item.User.UserId)
+            @Html.ActionLink("User: " + item.User.RealName, "Details", "Users", new { id = item.User.UserId }, null)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Rating)

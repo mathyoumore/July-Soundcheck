@@ -80,7 +80,5 @@ C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoun
 C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.csprojResolveAssemblyReference.cache
 C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.dll
 C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.pdb
-C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.InitialCreate.resources
+C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.init.resources
 C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.csproj.GenerateResource.Cache
-C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.AddReview.resources
-C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.VirtualizeArtistInAlbum.resources
