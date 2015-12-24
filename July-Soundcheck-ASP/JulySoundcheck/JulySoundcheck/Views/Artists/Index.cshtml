@@ -4,23 +4,34 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Artists</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
-        <th>
+        <th class="col-md-5">
             @Html.DisplayNameFor(model => model.ArtistName)
         </th>
-        <th></th>
-    </tr>
+        <th class="col-md-2"></th>
+        <th class="col-md-5">
+            @Html.DisplayNameFor(model => model.Albums)
+        </th>
+</tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="col-md-5">
             @Html.DisplayFor(modelItem => item.ArtistName)
+        </td>
+        <td class="col-md-2">
+        </td>
+        <td class="col-md-2">
+            @foreach (var a in item.Albums)
+            {
+                <p>@Html.ActionLink(a.AlbumName,"Details","Albums",new { id = a.AlbumId},null)</p>
+            }
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ArtistId }) |

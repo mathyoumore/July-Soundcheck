@@ -12,7 +12,7 @@ namespace JulySoundcheck.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ReviewId { get; set; }
-        public User User { get; set; }
+        public virtual User User { get; set; }
         public int UserId { get; set; }
         public float Rating { get; set; }
         public Album Album { get; set; }

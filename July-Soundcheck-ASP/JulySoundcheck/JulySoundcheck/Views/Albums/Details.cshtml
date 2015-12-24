@@ -7,35 +7,37 @@
 <h2>@Html.DisplayFor(model => model.AlbumName)</h2>
 
 <div>
-    <h4>@Html.ActionLink(Model.Artist.ArtistName, "Details", new { id = Model.Artist.ArtistId }, "Artists")</h4>
-    <hr />
-    <table class="table-striped">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Reviews)
-            </th>
-        </tr>
-        <tr>
-            <th class="col-md-3">
-                @Html.DisplayNameFor(model => model.Reviews[0].User.RealName)
-            </th>
-            <th class="col-md-4">
-                @Html.DisplayNameFor(model => model.Reviews[0].Rating)
-            </th>
-            <th class="col-md-5">
-                @Html.DisplayNameFor(model => model.Reviews[0].ContentsShort)
-            </th>
-        </tr>
-        @foreach (var r in Model.Reviews)
-        {
+    <h4>@Html.ActionLink(Model.Artist.ArtistName, "Details", "Artists", new { id = Model.Artist.ArtistId }, null) </h4>
+    <p>
+        <a href=" " class="btn btn-primary btn-lg">Register &raquo;</a>
+        @Url.Action("Create","Reviews",new { })
+        <hr />
+        <table class="table-striped">
             <tr>
-                <!--<td class="col-md-3">*** @Html.DisplayFor(model => r.User.RealName) ***</td>-->
-                <td class="col-md-3"> @r.User.UserId</td>
-                <td class="col-md-4">@Html.DisplayFor(model => r.Rating)</td>
-                <td class="col-md-5">@Html.DisplayFor(model => r.ContentsShort)</td>
+                <th>
+                    @Html.DisplayNameFor(model => model.Reviews)
+                </th>
             </tr>
-        }
-    </table>
+            <tr>
+                <th class="col-md-3">
+                    @Html.DisplayNameFor(model => model.Reviews[0].User.RealName)
+                </th>
+                <th class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Reviews[0].Rating)
+                </th>
+                <th class="col-md-5">
+                    @Html.DisplayNameFor(model => model.Reviews[0].ContentsShort)
+                </th>
+            </tr>
+            @foreach (var r in Model.Reviews)
+            {
+                <tr>
+                    <td class="col-md-3">@Html.ActionLink(r.User.DisplayName, "Details", "Users", new { id = r.User.UserId }, null)</td>
+                    <td class="col-md-4">@Html.DisplayFor(model => r.Rating)</td>
+                    <td class="col-md-5">@Html.DisplayFor(model => r.ContentsShort)</td>
+                </tr>
+            }
+        </table>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.AlbumId }) |
