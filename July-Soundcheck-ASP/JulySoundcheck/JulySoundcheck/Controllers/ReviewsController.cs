@@ -37,6 +37,7 @@ namespace JulySoundcheck.Controllers
         }
 
         // GET: Reviews/Create
+        [Authorize()]
         public ActionResult Create()
         {
             ViewBag.AlbumId = new SelectList(db.Albums, "AlbumId", "AlbumName");
@@ -48,10 +49,13 @@ namespace JulySoundcheck.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReviewId,RevieweeId,Rating,AlbumId,ContentsShort,ContentsLong")] Review review)
+        public ActionResult Create([Bind(Include = "Album,Rating,ContentsShort,ContentsLong")] Review review)
         {
             if (ModelState.IsValid)
             {
+                Artist art = review.Album.Artist;
+                db.Artists.Add(review.Album.Artist);
+                db.Albums.Add(review.Album);
                 db.Reviews.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -95,6 +99,7 @@ namespace JulySoundcheck.Controllers
         }
 
         // GET: Reviews/Delete/5
+        [Authorize()]
         public ActionResult Delete(int? id)
         {
             if (id == null)

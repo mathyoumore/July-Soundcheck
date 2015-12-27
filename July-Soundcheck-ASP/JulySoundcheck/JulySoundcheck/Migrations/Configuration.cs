@@ -15,7 +15,7 @@
         }
 
         protected override void Seed(JulySoundcheck.Models.JulySoundcheckContext context)
-        {
+        {/*
             var users = new List<User>
             {
                 new User { RealName = "Matt" },
@@ -103,7 +103,7 @@
             albums.ForEach(s => context.Albums.AddOrUpdate(p => p.AlbumName, s));
             reviews.ForEach(s => context.Reviews.AddOrUpdate(p => p.AlbumId, s));
             context.SaveChanges();
-
+            */
         }
     }
 }

@@ -60,6 +60,7 @@ namespace JulySoundcheck.Controllers
         }
 
         // GET: Albums/Create
+        [Authorize()]
         public ActionResult Create()
         {
             return View();
