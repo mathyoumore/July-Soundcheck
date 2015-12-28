@@ -168,3 +168,4 @@ X:\My Documents\GitHub\July-Soundcheck\JulySouncheck-ASP\July-Soundcheck-ASP\Jul
 X:\My Documents\GitHub\July-Soundcheck\JulySouncheck-ASP\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.pdb
 X:\My Documents\GitHub\July-Soundcheck\JulySouncheck-ASP\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.ChangeUserToIdentity.resources
 X:\My Documents\GitHub\July-Soundcheck\JulySouncheck-ASP\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.MigrateUserToIdentity.resources
+C:\Users\liter_000\Documents\GitHub\July-Soundcheck\July-Soundcheck-ASP\JulySoundcheck\JulySoundcheck\obj\Debug\JulySoundcheck.Migrations.init1.resources

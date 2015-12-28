@@ -12,7 +12,7 @@ namespace JulySoundcheck.Controllers
 {
     public class AlbumsController : Controller
     {
-        private JulySoundcheckContext db = new JulySoundcheckContext();
+        private JscContext db = new JscContext();
 
         // GET: Albums
        /* public ActionResult Index()

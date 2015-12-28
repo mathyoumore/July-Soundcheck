@@ -37,6 +37,10 @@ namespace JulySoundcheck.Models
 
     public class JscContext : IdentityDbContext<User>
     {
+        public System.Data.Entity.DbSet<JulySoundcheck.Models.Album> Albums { get; set; }
+        public System.Data.Entity.DbSet<JulySoundcheck.Models.Artist> Artists { get; set; }
+        public System.Data.Entity.DbSet<JulySoundcheck.Models.Review> Reviews { get; set; }
+
         public JscContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -46,7 +50,7 @@ namespace JulySoundcheck.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
+            //modelBuilder.Entity<IdentityUserLogin>().HasKey<string>(l => l.UserId);
             modelBuilder.Entity<IdentityRole>().HasKey<string>(r => r.Id);
             modelBuilder.Entity<IdentityUserRole>().HasKey(r => new { r.RoleId, r.UserId });
         }
@@ -55,11 +59,5 @@ namespace JulySoundcheck.Models
         {
             return new JscContext();
         }
-
-        public System.Data.Entity.DbSet<JulySoundcheck.Models.Album> Albums { get; set; }
-
-        public System.Data.Entity.DbSet<JulySoundcheck.Models.Artist> Artists { get; set; }
-
-        public System.Data.Entity.DbSet<JulySoundcheck.Models.Review> Reviews { get; set; }
     }
 }
