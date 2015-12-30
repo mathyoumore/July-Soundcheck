@@ -24,7 +24,7 @@ namespace JulySoundcheck.Models
         public string TwitterUser { get; set; }
         public Byte[] DisplayImage { get; set; }
         public virtual List<Review> Reviews { get; set; }
-        //public DbSet<User_Old> Users { get; set; }
+        public DbSet<User> Users { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
@@ -40,6 +40,7 @@ namespace JulySoundcheck.Models
         public System.Data.Entity.DbSet<JulySoundcheck.Models.Album> Albums { get; set; }
         public System.Data.Entity.DbSet<JulySoundcheck.Models.Artist> Artists { get; set; }
         public System.Data.Entity.DbSet<JulySoundcheck.Models.Review> Reviews { get; set; }
+        //public override System.Data.Entity.IDbSet<JulySoundcheck.Models.User> Users { get; set; }
 
         public JscContext()
             : base("DefaultConnection", throwIfV1Schema: false)

@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201512281853235_init1.Designer.cs">
       <DependentUpon>201512281853235_init1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512291450572_addUsersToContext.cs" />
+    <Compile Include="Migrations\201512291450572_addUsersToContext.Designer.cs">
+      <DependentUpon>201512291450572_addUsersToContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Album.cs" />
@@ -321,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512281853235_init1.resx">
       <DependentUpon>201512281853235_init1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512291450572_addUsersToContext.resx">
+      <DependentUpon>201512291450572_addUsersToContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

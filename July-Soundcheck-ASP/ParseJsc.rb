@@ -1,6 +1,5 @@
 require 'csv'
 
-
 def AddArtist(row)
 	return "new Artist { ArtistName = \"#{row[0]}\""
 end
