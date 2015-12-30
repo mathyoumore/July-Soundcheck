@@ -10,8 +10,18 @@
   </thead>
 
   <tbody>
+    <tr>
+      <td><b> Artist </b></td>
+      <td><b>  Album </b></td>
+      <td><b>  Review </b></td>
+      <td><b>  Rating </b></td>
+    </tr>
     <% @reviews.each do |review| %>
       <tr>
+        <td><%= review.album.artist.name%></td>
+        <td><%= review.album.name%></td>
+        <td><%= review.contents%></td>
+        <td><%= review.rating%></td>
         <td><%= link_to 'Show', review %></td>
         <td><%= link_to 'Edit', edit_review_path(review) %></td>
         <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>

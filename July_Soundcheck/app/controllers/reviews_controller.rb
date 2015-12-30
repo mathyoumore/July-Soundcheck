@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @review = Review.new(album:Album.new(artist:Artist.new))
   end
 
   # GET /reviews/1/edit
@@ -69,6 +69,7 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params[:review]
+      params.require(:review).permit(:contents, :rating,
+        album_attributes:[:name, artist_attributes: [:name]])
     end
 end
