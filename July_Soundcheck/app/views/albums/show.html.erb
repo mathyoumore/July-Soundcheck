@@ -1,9 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
+<h1><%=@album.artist.name%></h1>
+<h3>
   <%= @album.name %>
-</p>
+</h3>
+<h4> Reviews </h4>
+<table>
+  <tr>
+    <th>Reviewer</th>
+    <th>Rating</th>
+    <th>Review</th>
+  </tr>
+<% @album.reviews.each do |review|%>
+  <tr>
+    <td><%= link_to review.user.displayname, review.user%></th>
+    <td><%= review.rating %></th>
+    <td><%= review.contents %></th>
+    <td></th>
+  </tr>
+<% end %>
+</table>
+
 
 <%= link_to 'Edit', edit_album_path(@album) %> |
 <%= link_to 'Back', albums_path %>

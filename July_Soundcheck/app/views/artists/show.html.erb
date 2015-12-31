@@ -1,9 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @artist.name %>
+  <h1><%= @artist.name %></h1>
+  <h3>Albums</h3>
+  <% @artist.albums.each do |fluh| %>
+  <%= link_to fluh.name, fluh %>
+  <% end %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
