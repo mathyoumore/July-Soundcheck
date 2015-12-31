@@ -3,8 +3,9 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   # GET /reviews.json
+  helper_method :sort_column, :sort_direction
   def index
-    @reviews = Review.all
+    @reviews = Review.joins(:album => :artist).joins(:user).order(sort_column + " " + sort_direction)
   end
 
   # GET /reviews/1
@@ -59,6 +60,18 @@ class ReviewsController < ApplicationController
       format.html { redirect_to reviews_url, notice: 'Review was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def sort_column
+    params[:sort] || "name"
+  end
+
+  private
+
+  def sort_direction
+    params[:direction] || "asc"
   end
 
   private

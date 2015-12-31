@@ -11,17 +11,16 @@
 
   <tbody>
     <tr>
-      <td><b>Artist</b></td>
-      <td><b>Album</b></td>
-      <td><b>Review</b></td>
-      <td><b>Rating</b></td>
-      <td><b>User</b></td>
+      <td><b><%= sortable "name", "Artist"  %></b></td>
+      <td><b><%= sortable "title", "Album"  %></b></td>
+      <td><b><%= sortable "rating", "Review" %></b></td>
+      <td><b><%= sortable "rating" %></b></td>
+      <td><b><%= sortable "displayname", "User"  %></b></td>
     </tr>
-    <% sortedReviews = @reviews.sort_by{|e| e.album.name.downcase} %>
-    <% sortedReviews.each do |review| %>
+    <% @reviews.each do |review| %>
       <tr>
         <td><%= link_to review.album.artist.name, review.album.artist%></td>
-        <td><%= link_to  review.album.name, review.album%></td>
+        <td><%= link_to  review.album.title, review.album%></td>
         <td><%= link_to  review.contents%></td>
         <td><%= review.rating%></td>
         <td><%= link_to  review.user.displayname, review.user%></td>
