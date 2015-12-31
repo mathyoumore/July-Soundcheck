@@ -209,13 +209,13 @@
     <Compile Include="Migrations\201512231853052_init.Designer.cs">
       <DependentUpon>201512231853052_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512271915396_ChangeUserToIdentity.cs" />
-    <Compile Include="Migrations\201512271915396_ChangeUserToIdentity.Designer.cs">
-      <DependentUpon>201512271915396_ChangeUserToIdentity.cs</DependentUpon>
+    <Compile Include="Migrations\201512281853235_init1.cs" />
+    <Compile Include="Migrations\201512281853235_init1.Designer.cs">
+      <DependentUpon>201512281853235_init1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201512271917578_MigrateUserToIdentity.cs" />
-    <Compile Include="Migrations\201512271917578_MigrateUserToIdentity.Designer.cs">
-      <DependentUpon>201512271917578_MigrateUserToIdentity.cs</DependentUpon>
+    <Compile Include="Migrations\201512291450572_addUsersToContext.cs" />
+    <Compile Include="Migrations\201512291450572_addUsersToContext.Designer.cs">
+      <DependentUpon>201512291450572_addUsersToContext.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -323,11 +323,11 @@
     <EmbeddedResource Include="Migrations\201512231853052_init.resx">
       <DependentUpon>201512231853052_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512271915396_ChangeUserToIdentity.resx">
-      <DependentUpon>201512271915396_ChangeUserToIdentity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512281853235_init1.resx">
+      <DependentUpon>201512281853235_init1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201512271917578_MigrateUserToIdentity.resx">
-      <DependentUpon>201512271917578_MigrateUserToIdentity.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512291450572_addUsersToContext.resx">
+      <DependentUpon>201512291450572_addUsersToContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

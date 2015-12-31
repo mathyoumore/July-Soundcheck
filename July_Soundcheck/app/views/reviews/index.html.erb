@@ -1,4 +1,6 @@
-<h1>Listing reviews</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>All reviews</h1>
 
 <table>
   <thead>
@@ -8,11 +10,23 @@
   </thead>
 
   <tbody>
+    <tr>
+      <td><b><%= sortable "name", "Artist"  %></b></td>
+      <td><b><%= sortable "title", "Album"  %></b></td>
+      <td><b><%= sortable "rating", "Review" %></b></td>
+      <td><b><%= sortable "rating" %></b></td>
+      <td><b><%= sortable "displayname", "User"  %></b></td>
+    </tr>
     <% @reviews.each do |review| %>
       <tr>
-        <td><%= link_to 'Show', review %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %></td>
-        <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to review.album.artist.name, review.album.artist%></td>
+        <td><%= link_to  review.album.title, review.album%></td>
+        <td><%= link_to  review.contents%></td>
+        <td><%= review.rating%></td>
+        <td><%= link_to  review.user.displayname, review.user%></td>
+        <td><% link_to 'Show', review %></td>
+        <td><% link_to 'Edit', edit_review_path(review) %></td>
+        <td><% link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

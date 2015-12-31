@@ -11,46 +11,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151127011948) do
+ActiveRecord::Schema.define(version: 20151231194326) do
 
-  create_table "albums", force: true do |t|
-    t.string   "tracklist"
-    t.string   "location"
-    t.string   "genre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "albums", force: :cascade do |t|
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "artist_id"
   end
 
-  create_table "bands", force: true do |t|
-    t.string   "bio"
-    t.string   "genres"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  add_index "albums", ["artist_id"], name: "index_albums_on_artist_id"
 
-  create_table "reviews", force: true do |t|
-    t.date     "date"
-    t.string   "link_to_review"
-    t.string   "rating"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "usergroups", force: true do |t|
+  create_table "artists", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: true do |t|
-    t.string   "real_name"
-    t.string   "user_name"
-    t.string   "password"
+  create_table "reviews", force: :cascade do |t|
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "contents",             default: "", null: false
+    t.integer  "rating",     limit: 1, default: 0,  null: false
+    t.integer  "album_id"
+    t.integer  "user_id"
+  end
+
+  add_index "reviews", ["album_id"], name: "index_reviews_on_album_id"
+  add_index "reviews", ["user_id"], name: "index_reviews_on_user_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "displayname"
     t.string   "email"
-    t.date     "join_date"
-    t.string   "twitter_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "password_digest", default: "", null: false
   end
 
 end

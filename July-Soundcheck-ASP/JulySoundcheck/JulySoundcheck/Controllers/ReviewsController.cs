@@ -7,12 +7,15 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using JulySoundcheck.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 
 namespace JulySoundcheck.Controllers
 {
     public class ReviewsController : Controller
     {
-        private JulySoundcheckContext db = new JulySoundcheckContext();
+        private JscContext db = new JscContext();
+        UserManager<User> userManager = System.Web.HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
         // GET: Reviews
         public ActionResult Index()
@@ -52,11 +55,14 @@ namespace JulySoundcheck.Controllers
         public ActionResult Create([Bind(Include = "Album,Rating,ContentsShort,ContentsLong")] Review review)
         {
             if (ModelState.IsValid)
-            {
+            { 
+                User user = userManager.FindById(System.Web.HttpContext.Current.User.Identity.GetUserId());
+                review.Reviewee = user;
                 Artist art = review.Album.Artist;
                 db.Artists.Add(review.Album.Artist);
                 db.Albums.Add(review.Album);
-                db.Reviews.Add(review);
+                user.Reviews.Add(review);
+                //db.Reviews.Add(review);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

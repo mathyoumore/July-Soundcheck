@@ -3,8 +3,9 @@ class ReviewsController < ApplicationController
 
   # GET /reviews
   # GET /reviews.json
+  helper_method :sort_column, :sort_direction
   def index
-    @reviews = Review.all
+    @reviews = Review.joins(:album => :artist).joins(:user).order(sort_column + " " + sort_direction)
   end
 
   # GET /reviews/1
@@ -14,7 +15,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @review = Review.new(album:Album.new(artist:Artist.new))
   end
 
   # GET /reviews/1/edit
@@ -24,7 +25,7 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params)
+    @review = Review.new(review_params.merge(user: current_user))
 
     respond_to do |format|
       if @review.save
@@ -62,6 +63,18 @@ class ReviewsController < ApplicationController
   end
 
   private
+
+  def sort_column
+    params[:sort] || "name"
+  end
+
+  private
+
+  def sort_direction
+    params[:direction] || "asc"
+  end
+
+  private
     # Use callbacks to share common setup or constraints between actions.
     def set_review
       @review = Review.find(params[:id])
@@ -69,6 +82,8 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params[:review]
+      params.require(:review).permit(:contents, :rating,
+        user_attributes:[:displayname],
+        album_attributes:[:name, artist_attributes: [:name]])
     end
 end
