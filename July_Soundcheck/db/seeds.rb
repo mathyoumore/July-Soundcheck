@@ -5,3 +5,53 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#require 'csv'
+=begin
+def AddArtist(row)
+	return "new Artist { ArtistName = \"#{row[0]}\""
+end
+
+def AddAlbum(row)
+	return "new Album {
+	AlbumName = \"#{row[1]}\" ,
+	Artist = artists.Single(s => s.ArtistName == \"#{row[0]}\")"
+end
+
+def AddReview(row)
+	#puts row[7]
+	return "new Review {
+	User = users.Single(s => s.RealName == \"#{row[5]}\"),
+	Rating = #{if row[7].nil? then 0 else row[7][0] end},
+	Album = albums.Single(s => s.AlbumName == \"#{row[1]}\"),
+	ContentsShort = \"#{row[4]}\""
+end
+
+csv = CSV.read("JSCData.csv").to_a
+
+User.create(displayname: "mathyoumore", email: "literatehullmonk@gmail.com")
+User.create(displayname: "Philstone", email: "test@test.com")
+User.create(displayname: "Jrade", email: "test@test.com")
+User.create(displayname: "Crade", email: "test@test.com")
+User.create(displayname: "Polio", email: "test@test.com")
+User.create(displayname: "Turkey", email: "test@test.com")
+User.create(displayname: "waterbuffalo", email: "test@test.com")
+
+for r in 1...csv.length
+  art = Artist.create(name: csv[r][0])
+  alb = Album.create(title: csv[r][1], artist: art)
+
+end
+
+#artists + "\n};"
+#albums + "\n};"
+#reviews + "\n};"
+
+#fout = artists + "\n" + albums + "\n" + reviews +"\n\n"
+
+#fout += "artists.ForEach(s => context.Artists.AddOrUpdate(p => p.ArtistName, s));\n"
+#fout += "albums.ForEach(s => context.Albums.AddOrUpdate(p => p.AlbumName, s));\n"
+#fout += "reviews.ForEach(s => context.Reviews.AddOrUpdate(p => p.AlbumId, s));\n"
+#fout += "context.SaveChanges();\n"
+
+#File.open("JSCParsed.txt", 'w') { |file| file.write(fout) }
+=end

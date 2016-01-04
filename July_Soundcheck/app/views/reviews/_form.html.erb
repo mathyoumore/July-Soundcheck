@@ -13,8 +13,8 @@
 
   <div class="field">
     <%= f.fields_for :album do |alb|%>
-      Album name<br>
-      <%=alb.text_field :name %><br>
+      Album title<br>
+      <%=alb.text_field :title %><br>
       <%= alb.fields_for :artist do |art|%>
         Artist name<br>
         <%=art.text_field :name%><br>

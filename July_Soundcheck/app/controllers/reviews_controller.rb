@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-
   # GET /reviews
   # GET /reviews.json
   helper_method :sort_column, :sort_direction
@@ -84,6 +83,6 @@ class ReviewsController < ApplicationController
     def review_params
       params.require(:review).permit(:contents, :rating,
         user_attributes:[:displayname],
-        album_attributes:[:name, artist_attributes: [:name]])
+        album_attributes:[:title, artist_attributes: [:name]])
     end
 end

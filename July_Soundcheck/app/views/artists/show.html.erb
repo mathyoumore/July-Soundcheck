@@ -4,7 +4,7 @@
   <h1><%= @artist.name %></h1>
   <h3>Albums</h3>
   <% @artist.albums.each do |fluh| %>
-  <%= link_to fluh.name, fluh %>
+  <%= link_to fluh.title, fluh %>
   <% end %>
 </p>
 

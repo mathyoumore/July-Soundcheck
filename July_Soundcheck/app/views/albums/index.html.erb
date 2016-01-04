@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%console%>
 <h1>Listing Albums</h1>
 
 <table>
@@ -16,7 +16,7 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <td><%= link_to album.name, album %></td>
+        <td><%= link_to album.title, album %></td>
         <td><%= link_to album.artist.name, album.artist %></td>
         <td><%= album.reviews.count %></td>
         <td><%= album.average_review %></td>
