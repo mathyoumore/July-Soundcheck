@@ -19,7 +19,7 @@
         <td><%= user.email %></td>
         <td>
           <% user.reviews.each do |review| %>
-            <%= link_to review.album.name, review.album %> by
+            <%= link_to review.album.title, review.album %> by
             <%= link_to review.album.artist.name, review.album.artist %> was rated
             <%= link_to review.contents, review %>
           </br>

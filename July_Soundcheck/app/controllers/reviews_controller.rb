@@ -24,11 +24,19 @@ class ReviewsController < ApplicationController
   # POST /reviews
   # POST /reviews.json
   def create
-    @review = Review.new(review_params.merge(user: current_user))
-
+    @params = review_params.merge(user: current_user)
+  #  @params[:artist_attributes] = Artist.find_or_create_by(name: @params[:album_attributes][:artist_attributes][:name]).artist_params
+    @review = Review.new
+    @review.album = Album.find_or_create_by(title: @params[:album_attributes][:title])
+    @review.artist = Artist.find_or_create_by(name:@params[:album_attributes][:artist_attributes][:name])
+    @review.user = @params[:user]
+    @review.rating = @params[:rating]
+    @review.contents = @params[:contents]
+    # THIS IS TERRIBLE!
+    
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
+        format.html { redirect_to @review, notice: "Review was successfully created #{@params[:album_attributes][:title]}" }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }
@@ -81,7 +89,7 @@ class ReviewsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def review_params
-      params.require(:review).permit(:contents, :rating,
+        params.require(:review).permit(:contents, :rating,
         user_attributes:[:displayname],
         album_attributes:[:title, artist_attributes: [:name]])
     end

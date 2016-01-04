@@ -2,6 +2,7 @@ class Album < ActiveRecord::Base
   has_many :reviews
   belongs_to :artist
   accepts_nested_attributes_for :artist
+  validates_uniqueness_of :title
 
   def average_review
     ave = 0
@@ -12,8 +13,8 @@ class Album < ActiveRecord::Base
     return ave
   end
 
-  private
   def album_params
     params.require(:album).permit(:name,:artist)
   end
+
 end

@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#require 'csv'
-=begin
+require 'csv'
+
 def AddArtist(row)
 	return "new Artist { ArtistName = \"#{row[0]}\""
 end
@@ -28,13 +28,13 @@ end
 
 csv = CSV.read("JSCData.csv").to_a
 
-User.create(displayname: "mathyoumore", email: "literatehullmonk@gmail.com")
-User.create(displayname: "Philstone", email: "test@test.com")
-User.create(displayname: "Jrade", email: "test@test.com")
-User.create(displayname: "Crade", email: "test@test.com")
-User.create(displayname: "Polio", email: "test@test.com")
-User.create(displayname: "Turkey", email: "test@test.com")
-User.create(displayname: "waterbuffalo", email: "test@test.com")
+User.create(displayname: "mathyoumore", email: "literatehullmonk@gmail.com", password_digest: "test")
+User.create(displayname: "Philstone", email: "test1@test.com",password_digest: "test")
+User.create(displayname: "Jrade", email: "test2@test.com",password_digest: "test")
+User.create(displayname: "Crade", email: "test3@test.com",password_digest: "test")
+User.create(displayname: "Polio", email: "test4@test.com",password_digest: "test")
+User.create(displayname: "Turkey", email: "test5@test.com",password_digest: "test")
+User.create(displayname: "waterbuffalo", email: "test6@test.com",password_digest: "test")
 
 for r in 1...csv.length
   art = Artist.create(name: csv[r][0])
@@ -54,4 +54,3 @@ end
 #fout += "context.SaveChanges();\n"
 
 #File.open("JSCParsed.txt", 'w') { |file| file.write(fout) }
-=end
