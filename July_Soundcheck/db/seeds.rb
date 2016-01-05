@@ -28,18 +28,23 @@ end
 
 csv = CSV.read("JSCData.csv").to_a
 
-User.create(displayname: "mathyoumore", email: "literatehullmonk@gmail.com", password_digest: "test")
-User.create(displayname: "Philstone", email: "test1@test.com",password_digest: "test")
-User.create(displayname: "Jrade", email: "test2@test.com",password_digest: "test")
-User.create(displayname: "Crade", email: "test3@test.com",password_digest: "test")
-User.create(displayname: "Polio", email: "test4@test.com",password_digest: "test")
-User.create(displayname: "Turkey", email: "test5@test.com",password_digest: "test")
-User.create(displayname: "waterbuffalo", email: "test6@test.com",password_digest: "test")
+users = Hash.new(0)
+
+users["Matt"] = User.create(displayname: "mathyoumore", email: "literatehullmonk@gmail.com", password_digest: "test")
+users["Phil"] = User.create(displayname: "Philstone", email: "test1@test.com",password_digest: "test")
+users["Joey"] = User.create(displayname: "Jrade", email: "test2@test.com",password_digest: "test")
+users["Chris"] = User.create(displayname: "Crade", email: "test3@test.com",password_digest: "test")
+users["Polio"] = User.create(displayname: "Polio", email: "test4@test.com",password_digest: "test")
+users["Stephen"] = User.create(displayname: "Turkey", email: "test5@test.com",password_digest: "test")
+users["Turk"] = users["Stephen"]
+users["Nick"] = User.create(displayname: "who", email: "test6@test.com",password_digest: "test")
+users["Zach"] = User.create(displayname: "waterbuffalo", email: "test7@test.com",password_digest: "test")
+users["Mike"] = User.create(displayname: "whoismike", email: "test8@test.com",password_digest: "test")
 
 for r in 1...csv.length
-  art = Artist.create(name: csv[r][0])
-  alb = Album.create(title: csv[r][1], artist: art)
-
+  art = Artist.find_or_create_by(name: csv[r][0])
+  alb = Album.find_or_create_by(title: csv[r][1], artist: art)
+	Review.create(album: alb, user: users[csv[r][5]], contents: csv[r][4], rating: if csv[r][7].nil? then 0 else csv[r][7] end)
 end
 
 #artists + "\n};"
