@@ -26,6 +26,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Typeahead autofill search bar
+gem 'twitter-typeahead-rails'
+
+# responsive mobile-first front end
+gem 'zurb-foundation'
+
 # Use Unicorn as the app server
 gem 'puma'
 

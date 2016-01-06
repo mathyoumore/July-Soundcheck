@@ -13,4 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require twitter/typeahead
 //= require_tree .
+//= require_self
+
+$(function(){ $(document).foundation(); });
