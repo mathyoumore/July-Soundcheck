@@ -13,21 +13,28 @@ $(document).ready(function(){
   var sources = {
     get: function(name) {
       var set = [];
-      
-      if(name == 'names') {
-        set = this.names;
-      } else {
-        set =  this.states;
-      }
+      switch (name) {
+            case('artists'):
+              set = this.artists;
+              break;
+            case('albums'):
+              set =  this.albums;
+              break;
+            default:
+              set = ['Invalid request'];
+              break;
+              }
       set.initialize();
       return set;
     },
-    states: new Bloodhound({
-      datumTokenizer: Bloodhound.tokenizers.whitespace,
+    albums: new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
-      local: states
+      prefetch: {
+          url: '../albums.json'
+        }
     }),
-    names: new Bloodhound({
+    artists: new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       prefetch: {
@@ -42,7 +49,10 @@ $(document).ready(function(){
     $(this).typeahead({
       highlight: $(this).data('highlight'),
       hint: $(this).data('hint'),
-      minLength: $(this).data('minLength')
+      minLength: $(this).data('minLength'),
+      classNames: {
+        menu: 'f-dropdown'
+      }
     },{
       displayKey: 'name',
       name: 'my-dataset',

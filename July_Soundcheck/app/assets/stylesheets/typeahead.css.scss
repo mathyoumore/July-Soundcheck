@@ -1,0 +1,22 @@
+
+@import "foundation_and_overrides";
+.tt-cursor,.tt-suggestion:hover {
+  background-color: $f-dropdown-list-hover-bg;
+}
+
+.tt-highlight {
+  font-weight: bolder;
+}
+
+.tt-suggestion {
+  cursor: default;
+}
+
+.tt-input,.tt-hint {
+  width: auto;
+  background-color: #ff0000;
+}
+
+.button:visited{
+  color:$button-font-color;
+}

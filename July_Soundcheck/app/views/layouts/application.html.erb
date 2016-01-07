@@ -26,9 +26,7 @@
       <section class="top-bar-section">
         <ul class = "right">
           <% if current_user %>
-          <li class="name">
-            <h1><%= link_to "WRITE A REVIEW", new_review_path %></h1>
-          </li>
+            <li class="active"><%= link_to "WRITE A REVIEW", new_review_path%></li>
             <li><%= link_to current_user.displayname, current_user%></li>
             <li><%= link_to "Log out"%>
           <% else %>
@@ -37,13 +35,13 @@
           <% end %>
         </ul>
         <ul class="left">
-            <li><%= link_to "Contact Us" %></li>
+            <li><%= link_to "JSC", reviews_path%></li>
           <li class="divider"></li>
           <li><%= link_to "Browse Reviews", reviews_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Artists" %></li>
+          <li><%= link_to "Artists", artists_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Albums" %></li>
+          <li><%= link_to "Albums", albums_path %></li>
         </ul>
       </section>
     </nav>

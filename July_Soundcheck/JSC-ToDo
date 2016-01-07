@@ -2,9 +2,9 @@ JulySoundcheck Featureset
 
 APPLY TO CMM ON JAN 8 OR WHEN THIS LIST IS COMPLETE - WHICHEVER COMES SOONER
 
-- Typeahead autofill for art and album
-* Nice(r) formatting, either bootstrap or foundation front endedness
+X Typeahead autofill for art and album
+X Nice(r) formatting, either bootstrap or foundation front endedness
 * Paginate search results so pages don't load 300 albums
 * Write integration specs using Capybara
 X Something something regex
-* Great big red button that says "Write a review"
+X Great big red button that says "Write a review"

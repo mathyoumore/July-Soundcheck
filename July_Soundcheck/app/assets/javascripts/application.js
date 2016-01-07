@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/typeahead
+//= require foundation
 //= require_tree .
 //= require_self
-
-$(function(){ $(document).foundation(); });

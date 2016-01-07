@@ -13,11 +13,12 @@
 
   <div class="field">
     <%= f.fields_for :album do |alb|%>
-      Album title<br>
-      <%=alb.text_field :title %><br>
       <%= alb.fields_for :artist do |art|%>
         Artist name<br>
-        <%=art.text_field :name%><br>
+        <%= art.text_field :name, data: { typeahead: '', highlight: 'true', 'min-length': '2', hint: 'Artist name...', source: 'artists' } %>
+      <br>
+      Album title<br>
+      <%=alb.text_field :title %><br>
       <% end %>
     <% end %>
   </div>
@@ -30,6 +31,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button radius" %>
+    <%= link_to 'Cancel', reviews_path, class: "button radius secondary" %>
   </div>
 <% end %>

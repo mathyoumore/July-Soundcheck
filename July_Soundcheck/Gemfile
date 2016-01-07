@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'twitter-typeahead-rails'
 
 # responsive mobile-first front end
-gem 'zurb-foundation'
+gem 'foundation-rails'
 
 # Use Unicorn as the app server
 gem 'puma'
