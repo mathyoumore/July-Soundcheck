@@ -20,3 +20,14 @@
 .button:visited{
   color:$button-font-color;
 }
+
+.twitter-typeahead{
+  .f-dropdown{
+    max-width: none;
+  }
+  width: 100%;
+}
+
+.th {
+  text-align: center;
+}

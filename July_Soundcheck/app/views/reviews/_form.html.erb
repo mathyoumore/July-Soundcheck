@@ -15,15 +15,12 @@
     <%= f.fields_for :album do |alb|%>
       <%= alb.fields_for :artist do |art|%>
         Artist name<br>
-        <%= art.text_field :name, data: { typeahead: '', highlight: 'true', 'min-length': '2', hint: 'Artist name...', source: 'artists' } %>
+        <%= art.text_field :name, data: { typeahead: '', highlight: 'true', 'min-length': '1', hint: 'Artist name...', source: 'artists' } %>
       <br>
       Album title<br>
-      <%=alb.text_field :title %><br>
+      <%=alb.text_field :title, data: { typeahead: '', highlight: 'true', 'min-length': '1', hint: 'Album name...', source: 'albums' } %><br>
       <% end %>
     <% end %>
-  </div>
-
-  <div class="field">
     <%= f.label :contents %><br>
     <%= f.text_area :contents %><br>
     <%= f.label :rating %><br>

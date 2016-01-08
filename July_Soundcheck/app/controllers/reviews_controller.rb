@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   helper_method :sort_column, :sort_direction
   def index
-    @reviews = Review.joins(:album => :artist).joins(:user).order(sort_column + " " + sort_direction)
+    @reviews = Review.joins(:album => :artist).joins(:user).order(sort_column + " " + sort_direction).page(params[:page]).per_page(15)
   end
 
   # GET /reviews/1
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
     @review.rating = @params[:rating]
     @review.contents = @params[:contents]
     # THIS IS TERRIBLE!
-    
+
     respond_to do |format|
       if @review.save
         format.html { redirect_to @review, notice: "Review was successfully created #{@params[:album_attributes][:title]}" }

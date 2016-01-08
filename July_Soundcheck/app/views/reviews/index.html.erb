@@ -1,9 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <h1>All reviews</h1>
+<%= will_paginate @reviews, previous_label: h("<"),next_label: h(">") %><br>
 
 <table>
-  <tbody>
+  <thead>
     <tr>
       <td><b><%= sortable "name", "Artist"  %></b></td>
       <td><b><%= sortable "title", "Album"  %></b></td>
@@ -11,6 +12,8 @@
       <td><b><%= sortable "rating" %></b></td>
       <td><b><%= sortable "displayname", "User"  %></b></td>
     </tr>
+  </thead>
+    <tbody>
     <% @reviews.each do |review| %>
       <tr>
         <td><%= link_to review.album.artist.name, review.album.artist%></td>

@@ -1,37 +1,45 @@
 $(document).ready(function(){
-  var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-    'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-    'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-    'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-    'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-    'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-    'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-    'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-  ];
-
   var sources = {
     get: function(name) {
-      var set = [];
+      if(name == null) {
+        name = '';
+      }
+      var set = null;
+      name = name.split(':');
+      var id = name[1];
+      name = name[0];
+
       switch (name) {
-            case('artists'):
-              set = this.artists;
-              break;
-            case('albums'):
-              set =  this.albums;
-              break;
-            default:
-              set = ['Invalid request'];
-              break;
-              }
+        case('artists'):
+          set = this.artists;
+          break;
+        case('albums'):
+          set =  this.albums;
+          break;
+        default:
+          set = this.default;
+          break;
+      }
       set.initialize();
       return set;
     },
+    default: new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.whitespace,
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      local: []
+    }),
     albums: new Bloodhound({
       datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
       queryTokenizer: Bloodhound.tokenizers.whitespace,
       prefetch: {
           url: '../albums.json'
+        }
+    }),
+    users: new Bloodhound({
+      datumTokenizer: Bloodhound.tokenizers.obj.whitespace('displayname'),
+      queryTokenizer: Bloodhound.tokenizers.whitespace,
+      prefetch: {
+          url: '../users.json'
         }
     }),
     artists: new Bloodhound({
@@ -41,22 +49,42 @@ $(document).ready(function(){
           url: '../artists.json'
         }
     })
-
   };
 
-  // Find all inputs with the data-typeahead attribute
-  $('input[data-typeahead]').each(function(index){
-    $(this).typeahead({
-      highlight: $(this).data('highlight'),
-      hint: $(this).data('hint'),
-      minLength: $(this).data('minLength'),
+  function site_typeahead(el) {
+    return $(el).typeahead({
+      highlight: $(el).data('highlight'),
+      hint: $(el).data('hint'),
+      minLength: $(el).data('minLength'),
       classNames: {
         menu: 'f-dropdown'
       }
     },{
       displayKey: 'name',
       name: 'my-dataset',
-      source: sources.get($(this).data('source'))
+      source: sources.get($(el).data('source'))
     });
+  }
+
+  // Find all inputs with the data-typeahead attribute
+  $('input[data-typeahead]').each(function(index){
+    site_typeahead(this);
   });
+
+  // $('.twitter-typeahead').each(function(index){
+  //   $(this).find("input[data-source='artists']").parent().on("typeahead:autocomplete", function(event, obj){
+  //     console.log(obj);
+  //     $(this).siblings('.twitter-typeahead').each(function(index){
+  //       if($(this).find('input.tt-input').attr('name').indexOf('title') >= 0) {
+  //         base_scope = $(this).parent();
+  //         $(this).find('input[data-typeahead]').typeahead('destroy');
+  //         base_input = base_scope.find('> input[data-typeahead]');
+  //         console.log(base_input.data());
+  //         base_input.data('source','album:id');
+  //         console.log(base_input.data());
+  //         site_typeahead(base_input);
+  //       }
+  //     });
+  //   });
+  // });
 });

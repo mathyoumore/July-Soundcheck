@@ -35,6 +35,9 @@ gem 'foundation-rails'
 # Use Unicorn as the app server
 gem 'puma'
 
+# pagination
+gem 'will_paginate', '> 3.0'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
