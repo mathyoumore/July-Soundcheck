@@ -1,18 +1,31 @@
-JulySoundcheck Featureset
+JulySoundcheck Wish list
 
-APPLY TO CMM ON JAN 8 OR WHEN THIS LIST IS COMPLETE - WHICHEVER COMES SOONER
 
-X Typeahead autofill for art and album
-X Nice(r) formatting, either bootstrap or foundation front endedness
-X Paginate search results so pages don't load 300 albums
-* Write integration specs using Capybara
+
+[*] Typeahead autofill for art and album
+  [ ] Cleverer search bar (confirmed artist should search through that artists' albums)
+[X] Nice(r) formatting, either bootstrap or foundation front endedness
+[X] Paginate search results so pages don't load 300 albums
+[ ] Write integration specs using Capybara
   - Ryan Bates' "How I test"
   - Factory Girl
-    - Generates fake data to handle RSpec a helluva lot easier
-
-* Make it look nicer
-X Great big red button that says "Write a review"
+    - Fake model factory to handle RSpec a helluva lot easier
+[ ] Make it look nicer
+  [ ] Show pages especially
+[X] Great big red button that says "Write a review"
+[ ] Last.fm integration for pages priority: Artist -> Album -> Song
+[ ] Global search
+[ ] Home page landing
+[ ] Activity feed
+[ ] Friend/Follow system?
+[ ] Twitter integration
+  [ ] Auto-find relevant tweets and connect them to reviews
+  [ ] Post recent tweets with #JulySoundcheck
 
 Issues
 
-[] Artist.best_album returns all of an artist's albums instead of their highest rated one
+[ ] Artist.best_album returns all of an artist's albums instead of their highest rated one
+[ ] Typeahead doesn't work well with other instances of itself. Wait or replace.
+[ ] find_or_create album doesn't know what to do if an album with that same name exists
+  - It needs to be able to know that the artists are dissimilar, so the albums are different
+    - Example: UMO's, Makthavarskan's, Crystal Castle's "II"
