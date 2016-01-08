@@ -1,5 +1,7 @@
 require 'csv'
 
+# Finds users from the CSV because nil error are irritating
+
 csv = CSV.read("JSCData.csv").to_a
 users = Hash.new(0)
 

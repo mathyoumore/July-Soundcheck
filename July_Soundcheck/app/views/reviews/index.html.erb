@@ -1,25 +1,25 @@
-<p id="notice"><%= notice %></p>
+</br><p id="notice"><%= notice %></p>
 
 <h1>All reviews</h1>
 <div class="row">
   <table class="hover">
     <thead>
       <tr>
-        <th class="large-3 columns"><%= sortable "name", "Artist"  %></th>
-        <th class="large-3 columns"><%= sortable "title", "Album"  %></th>
-        <th class="large-3 columns"><%= sortable "rating", "Review" %></th>
-        <th class="large-1 columns text-center"><%= sortable "rating" %></th>
-        <th class="large-2 columns"><%= sortable "displayname", "User"  %></th>
+        <th class="small-3 columns"><%= sortable "name", "Artist"  %></th>
+        <th class="small-3 columns"><%= sortable "title", "Album"  %></th>
+        <th class="small-3 columns"><%= sortable "rating", "Review" %></th>
+        <th class="small-1 columns text-center"><%= sortable "rating" %></th>
+        <th class="small-2 columns"><%= sortable "displayname", "User"  %></th>
       </tr>
     </thead>
       <tbody>
       <% @reviews.each do |review| %>
         <tr>
-          <td class="large-3 columns"><%= link_to review.album.artist.name, review.album.artist%></td>
-          <td class="large-3 columns"><%= link_to  review.album.title, review.album%></td>
-          <td class="large-3 columns"><%= link_to  review.contents%></td>
-          <td class="large-1 columns text-center"><%= review.rating%></td>
-          <td class="large-2 columns"><%= link_to  review.user.displayname, review.user%></td>
+          <td class="small-3 columns"><%= link_to review.album.artist.name, review.album.artist%></td>
+          <td class="small-3 columns"><%= link_to  review.album.title, review.album%></td>
+          <td class="small-3 columns"><%= link_to  review.contents%></td>
+          <td class="small-1 columns text-center"><%= review.rating%></td>
+          <td class="small-2 columns"><%= link_to  review.user.displayname, review.user%></td>
         </tr>
       <% end %>
     </tbody>

@@ -36,7 +36,8 @@ class ReviewsController < ApplicationController
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: "Review was successfully created #{@params[:album_attributes][:title]}" }
+        format.html { redirect_to reviews_path,
+          notice: "Review was successfully created for #{@params[:album_attributes][:title]} by #{@params[:album_attributes][:artist_attributes][:name]}" }
         format.json { render :show, status: :created, location: @review }
       else
         format.html { render :new }

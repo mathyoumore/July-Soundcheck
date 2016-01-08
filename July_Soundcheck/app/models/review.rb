@@ -6,6 +6,8 @@ class Review < ActiveRecord::Base
   validates :album, :contents, :rating, presence: true
 end
 
+# On create, send a message to that album to update the average album rating 
+
 =begin
 Artist - dropdown search : typeahed with forced "create new" option
 Album - dropdown search : typeahead, if artist id was identified find their albums
