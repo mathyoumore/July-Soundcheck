@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all.page(params[:page]).per_page(15)
+    @albums = Album.all.page(params[:page]).per_page(20)
   end
 
   # GET /albums/1

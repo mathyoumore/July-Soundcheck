@@ -1,26 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing <%= @albums.count %> Albums</h1>
-<%= will_paginate @albums, previous_label: h("<"),next_label: h(">") %><br>
+<h3>Listing <%= @albums.count %> albums</h3></br>
 
-<table>
-  <thead>
-    <tr>
-      <th>Album Name</th>
-      <th>Artist Name</th>
-      <th>Reviews</th>
-      <th>Average Review</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @albums.each do |album| %>
+<row>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to album.title, album %></td>
-        <td><%= link_to album.artist.name, album.artist %></td>
-        <td><%= album.reviews.count %></td>
-        <td><%= album.average_review %></td>
+        <th class="large-5 columns text-left">Album Name</th>
+        <th class="large-4 columns text-left">Artist Name</th>
+        <th class="large-1 columns text-center">Reviews</th>
+        <th class="large-2 columns text-center">Average Review</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @albums.each do |album| %>
+        <tr>
+          <td class="large-5 columns text-left"><%= link_to album.title, album %></td>
+          <td class="large-4 columns text-left"><%= link_to album.artist.name, album.artist %></td>
+          <td class="large-1 columns text-center"><%= album.reviews.count %></td>
+          <td class="large-2 columns text-center"><%= album.average_review %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</row>
+
+<div class="row">
+  <div class="large-12 columns">
+    <%= will_paginate @albums, previous_label: h("<"),next_label: h(">") %><br>
+  </div>
+</div>

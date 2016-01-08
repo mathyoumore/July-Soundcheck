@@ -1,0 +1,13 @@
+@import "foundation_and_overrides";
+th, td {
+  text-align: center;
+}
+
+a:link, a:active, a:visited, a:focus{
+  color: $text-primary-color;
+  background-color: inherit;
+}
+
+a:hover{
+  color: $primary-color;
+}
