@@ -19,3 +19,20 @@ a:hover{
 #logout{
   background-color: $primary-color;
 }
+
+html.turbolinks-progress-bar::before {
+  background-color: $primary-color;
+  height: 30px !important;
+  z-index: 100;
+}
+
+.menu {
+  margin: 10px;
+}
+
+ul.global-search-bar{
+  input {
+    width: 95%;
+    margin: 1% 2%;
+  }
+}

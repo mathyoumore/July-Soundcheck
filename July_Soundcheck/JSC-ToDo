@@ -29,8 +29,9 @@ Issues
     - Example: UMO's, Makthavarskan's, Crystal Castle's "II"
 
 Assignment list
-[ ] Dropdown user menu on main page
-[ ] Global search
+[X] Dropdown user menu on main page
+[Stand in] Global search
 [ ] Fix Issue 3
+[ ] DRY up table formatting, use review as example
 [ ] Home landing page
-[ ]
+[ ] Progress bar

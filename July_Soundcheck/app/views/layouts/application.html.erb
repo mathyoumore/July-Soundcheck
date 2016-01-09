@@ -26,43 +26,32 @@
       <section class="top-bar-section">
         <ul class="left">
           <li class="has-dropdown large">
-            <a data-dropdown="hover2" data-options: "is_over:false;">JSC</a>
-            <ul class="dropdown">
-              <li class = "hide-for-large-up active"><%= link_to "WRITE A REVIEW", new_review_path%></li>
-              <li class = "hide-for-large-up divider"></li>
-              <li class = "hide-for-large-up"><%= link_to "Reviews", reviews_path %></li>
-              <li class = "hide-for-large-up divider"></li>
-              <li class = "hide-for-large-up"><%= link_to "Artists", artists_path %></li>
-              <li class = "hide-for-large-up divider"></li>
-              <li class = "hide-for-large-up"><%= link_to "Albums", albums_path %></li>
-              <!-- This is not DRY -->
-              <li class = "hide-for-large-up has-dropdown large">
-                <%= link_to current_user.displayname, current_user, data: { dropdown: "hover1", options: "is_hover:false; hover_timeout:333"}%>
-                <ul class="dropdown menu-icon">
-                  <li><%= link_to "Profile", current_user %></li>
-                  <li><%= link_to "Activity Feed", current_user %></li>
-                  <li><%= link_to "Settings", current_user %></li>
-                  <li class="divider"></li>
-                  <li><%= link_to "Log out", logout_path %></li>
-                </ul>
+            <a class = "active" data-dropdown="hover2" data-options: "is_over:false;">JSC</a>
+            <ul class="dropdown hide-for-large-up">
+              <li class = "active"><%= link_to "WRITE A REVIEW", new_review_path%></li>
+              <li class = ""><%= link_to "Reviews", reviews_path %></li>
+              <li class = ""><%= link_to "Artists", artists_path %></li>
+              <li class = ""><%= link_to "Albums", albums_path %></li>
+              <ul class="hide-for-large-up">
+                <%= render partial: 'layouts/global_search_bar' %>
+              </ul>
+              <li class = "divider"></li>
+              <li class = " has-dropdown large">
+                <%= render partial: 'layouts/user_menu' %>
               </li>
-          </ul>
+            </ul>
           <li class = "hide-for-medium-down"> <%= link_to "Reviews", reviews_path%></li>
           <li class = "hide-for-medium-down"> <%= link_to "Artists", artists_path%></li>
           <li class = "hide-for-medium-down"> <%= link_to "Albums", albums_path%></li>
+          <%= render partial: 'layouts/global_search_bar' %>
+          <li>
+          </li>
         </ul>
         <ul class = "right">
           <% if current_user %>
             <li class="active"><%= link_to "WRITE A REVIEW", new_review_path%></li>
             <li class="has-dropdown large">
-              <%= link_to current_user.displayname, current_user, data: { dropdown: "hover1", options: "is_hover:true; hover_timeout:333"}%>
-              <ul class="dropdown menu-icon">
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Activity Feed", current_user %></li>
-                <li><%= link_to "Settings", current_user %></li>
-                <li class="divider"></li>
-                <li><%= link_to "Log out", logout_path %></li>
-              </ul>
+              <%= render partial: 'layouts/user_menu' %>
             </li>
           <% else %>
             <li><%= link_to "Log in", new_session_path %></li>

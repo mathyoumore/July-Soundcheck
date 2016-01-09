@@ -17,3 +17,5 @@
 //= require foundation
 //= require_tree .
 //= require_self
+
+//Turbolinks.enableProgressBar();
