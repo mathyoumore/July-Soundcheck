@@ -1,7 +1,11 @@
-</br><p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
-<h1>All reviews</h1>
-<div class="row">
+<h2>All reviews</h2>
+
+<row>
+  <div class="small-12 columns">
+    <%= will_paginate @reviews, previous_label: h("<"),next_label: h(">") %><br>
+  </div>
   <table class="hover">
     <thead>
       <tr>
@@ -24,9 +28,9 @@
       <% end %>
     </tbody>
   </table>
-</div>
+</row>
 <div class="row">
-  <div class="large-12 columns">
+  <div class="small-12 columns">
     <%= will_paginate @reviews, previous_label: h("<"),next_label: h(">") %><br>
   </div>
 </div>

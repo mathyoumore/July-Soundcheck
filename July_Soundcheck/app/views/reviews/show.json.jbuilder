@@ -1,1 +1,1 @@
-json.extract! @review, :id, :created_at, :updated_at
+json.extract! @review, :id, :artist, :album, :contents, :rating, :created_at, :updated_at

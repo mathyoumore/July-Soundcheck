@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require twitter/typeahead
 //= require foundation
+//= require handlebars.runtime
 //= require_tree .
 //= require_self
 

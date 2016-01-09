@@ -15,7 +15,7 @@ JulySoundcheck Wish list
 [ ] Global search
 [ ] Home page landing
 [ ] Activity feed
-[ ] Friend/Follow system?
+[163] Friend/Follow system?
 [ ] Twitter integration
   [ ] Auto-find relevant tweets and connect them to reviews
   [ ] Post recent tweets with #JulySoundcheck
@@ -24,14 +24,22 @@ Issues
 
 [ ] 1 Artist.best_album returns all of an artist's albums instead of their highest rated one
 [ ] 2 Typeahead doesn't work well with other instances of itself. Wait or replace.
-[ ] 3 find_or_create album doesn't know what to do if an album with that same name exists
+[X] 3 find_or_create album doesn't know what to do if an album with that same name exists
   - It needs to be able to know that the artists are dissimilar, so the albums are different
     - Example: UMO's, Makthavarskan's, Crystal Castle's "II"
+  - Fixed by FOCB the review artist, then FOCB artist and album title
 
 Assignment list
 [X] Dropdown user menu on main page
-[Stand in] Global search
-[ ] Fix Issue 3
-[ ] DRY up table formatting, use review as example
+[37, 102, 306-307] Global search
+  - Might be wiser to switch to Elasticsearch
+[X] Fix Issue 3
+[It's DRYer] DRY up table formatting, use review as example
+[ ] "Best Albums" page with high rating scope
+[274] User roles
+[88] Better rating form
+[19-21] Prevent most users from accessing User-related pages
+[114] Better pagination
 [ ] Home landing page
 [ ] Progress bar
+287, 131, 292, 323-325

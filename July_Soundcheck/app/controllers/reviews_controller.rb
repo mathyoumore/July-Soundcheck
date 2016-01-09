@@ -27,8 +27,8 @@ class ReviewsController < ApplicationController
     @params = review_params.merge(user: current_user)
   #  @params[:artist_attributes] = Artist.find_or_create_by(name: @params[:album_attributes][:artist_attributes][:name]).artist_params
     @review = Review.new
-    @review.album = Album.find_or_create_by(title: @params[:album_attributes][:title])
-    @review.artist = Artist.find_or_create_by(name:@params[:album_attributes][:artist_attributes][:name])
+    @review.artist = Artist.find_or_create_by(name: @params[:album_attributes][:artist_attributes][:name])
+    @review.album = Album.find_or_create_by(title: @params[:album_attributes][:title], artist: @review.artist)
     @review.user = @params[:user]
     @review.rating = @params[:rating]
     @review.contents = @params[:contents]

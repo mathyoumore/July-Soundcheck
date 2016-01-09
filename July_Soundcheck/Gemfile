@@ -38,6 +38,9 @@ gem 'puma'
 # pagination
 gem 'will_paginate', '> 3.0'
 
+# Handlebars compiler
+gem 'handlebars_assets', github: 'leshill/handlebars_assets'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

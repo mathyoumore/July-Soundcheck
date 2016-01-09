@@ -1,34 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing <%= @artists.count %> Artists</h1>
+<h2>Listing <%= @artists.count %> Artists</h2>
 
+<div class="large-12 columns">
+  <%= will_paginate @artists, previous_label: h("<"),next_label: h(">") %><br>
+</div>
 <row>
   <table class="hover">
     <thead>
       <tr>
-        <th width = "900">Name</th>
-        <th class = "text-center" width = "500">Albums</th>
-        <th width = "500">Highest Rated Album</th>
-        <th class = "text-center" width = "500">Reviews</th>
-        <th class = "text-center" width = "500">Average Review</th>
+        <th width = "25%">Name</th>
+        <th class = "text-center" width = "12.5%">Albums</th>
+        <th width = "25%">Highest Rated Album</th>
+        <th class = "text-center" width = "6.25%">Reviews</th>
+        <th class = "text-center" width = "12.5%">Average Review</th>
       </tr>
     </thead>
 
     <tbody>
       <% @artists.each do |artist| %>
         <tr>
-          <td width = "900"><%= link_to artist.name, artist %></td>
-          <td class = "text-center" width = "500"><%= artist.albums.count %></td>
-          <td width = "500"><%= link_to artist.best_album[0].title, artist.best_album[0] %></td>
-          <td class = "text-center" width = "500"><%= artist.review_count %></td>
-          <td class = "text-center" width = "500"><%= artist.average_review %></td>
+          <td width = "25%"><%= link_to artist.name, artist %></td>
+          <td class = "text-center" width = "12.5%"><%= artist.albums.count %></td>
+          <td width = "12.5%"><%= link_to artist.best_album[0].title, artist.best_album[0] %></td>
+          <td class = "text-center" width = "12.5%"><%= artist.review_count %></td>
+          <td class = "text-center" width = "12.5%"><%= artist.average_review %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
-</row>
-<div class="row">
   <div class="large-12 columns">
     <%= will_paginate @artists, previous_label: h("<"),next_label: h(">") %><br>
   </div>
-</div>
+</row>

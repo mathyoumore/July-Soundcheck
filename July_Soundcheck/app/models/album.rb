@@ -2,7 +2,7 @@ class Album < ActiveRecord::Base
   has_many :reviews
   belongs_to :artist
   accepts_nested_attributes_for :artist
-  validates_uniqueness_of :title
+  #validates_uniqueness_of :title
 
   def average_review
     ave = 0
