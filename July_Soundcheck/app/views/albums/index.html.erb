@@ -22,7 +22,9 @@
           <td width = "40%" ><%= link_to album.title, album %></td>
           <td width = "40%" ><%= link_to album.artist.name, album.artist %></td>
           <td width = "10%" class="text-center"><%= album.reviews.count %></td>
-          <td width = "10%" class="text-center"><%= album.average_review %></td>
+          <td width = "10%" class="text-center">
+            <%= album.average_review %>
+          </td>
         </tr>
       <% end %>
     </tbody>

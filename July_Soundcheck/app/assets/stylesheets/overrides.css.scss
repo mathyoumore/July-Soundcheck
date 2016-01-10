@@ -36,3 +36,11 @@ ul.global-search-bar{
     margin: 1% 2%;
   }
 }
+
+td #low_score {
+  color: $alert-color;
+}
+
+td #high_score {
+  color: $success-color;
+}

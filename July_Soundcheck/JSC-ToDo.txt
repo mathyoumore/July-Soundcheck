@@ -22,7 +22,7 @@ JulySoundcheck Wish list
 
 Issues
 
-[ ] 1 Artist.best_album returns all of an artist's albums instead of their highest rated one
+[X] 1 Artist.best_album returns all of an artist's albums instead of their highest rated one
 [ ] 2 Typeahead doesn't work well with other instances of itself. Wait or replace.
 [X] 3 find_or_create album doesn't know what to do if an album with that same name exists
   - It needs to be able to know that the artists are dissimilar, so the albums are different
