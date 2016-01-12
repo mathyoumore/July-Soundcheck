@@ -4,23 +4,23 @@
   <%= @user.displayname %>
 </h1>
 <h3>Reviews</h3>
-<table>
-  <tr>
-    <th>Artist</th>
-    <th>Album</th>
-    <th>Review</th>
-    <th>Rating</th>
-  </tr>
-<% @user.reviews.each do |review| %>
-<tr>
-  <td><%= link_to review.album.artist.name, review.album.artist%></td>
-  <td><%= link_to  review.album.title, review.album%></td>
-  <td><%= link_to  review.contents%></td>
-  <td><%= review.rating%></td>
-</tr>
-<% end %>
-</table>
-
-<% if @user == current_user %>
-<%= link_to 'Edit your profile', edit_user_path(@user) %>
-<% end %>
+<row>
+  <div class="large-12 columns">
+    <table>
+      <thead>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </thead>
+    <% @user.reviews.each do |review| %>
+    <tr>
+      <td><%= link_to review.album.artist.name, review.album.artist%></td>
+      <td><%= link_to  review.album.title, review.album%></td>
+      <td><%= link_to  review.contents%></td>
+      <td><%= review.rating%></td>
+    </tr>
+    <% end %>
+    </table>
+  </div>
+</row>
