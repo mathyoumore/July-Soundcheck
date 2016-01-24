@@ -1,8 +1,10 @@
-<%= link_to current_user.displayname, current_user, data: { dropdown: "hover1", options: "is_hover:false; hover_timeout:333"}%>
-<ul class="dropdown menu-icon">
-  <li><%= link_to "Profile", current_user %></li>
-  <li><%= link_to "Activity Feed", current_user %></li>
-  <li><%= link_to "Settings", current_user %></li>
-  <li class="divider"></li>
-  <li><%= link_to "Log out", logout_path %></li>
-</ul>
+<% if current_user %>
+  <%= link_to current_user.displayname, current_user, data: { dropdown: "hover1", options: "is_hover:false; hover_timeout:333"}%>
+  <ul class="dropdown menu-icon">
+    <li><%= link_to "Profile", current_user %></li>
+    <li><%= link_to "Activity Feed", current_user %></li>
+    <li><%= link_to "Settings", current_user %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Log out", logout_path %></li>
+  </ul>
+<%end%>

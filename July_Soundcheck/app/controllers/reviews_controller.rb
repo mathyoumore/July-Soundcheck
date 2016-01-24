@@ -32,7 +32,6 @@ class ReviewsController < ApplicationController
     @review.user = @params[:user]
     @review.rating = @params[:rating]
     @review.contents = @params[:contents]
-    # THIS IS TERRIBLE!
 
     respond_to do |format|
       if @review.save

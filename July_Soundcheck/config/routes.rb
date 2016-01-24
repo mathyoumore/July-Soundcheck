@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get 'static_pages/home'
+
   get 'sessions/new'
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  root :to => 'reviews#index'
+  #root :to => 'reviews#index'
+  root :to => 'static_pages#home'
+
+
 
   resources :sessions
   resources :reviews

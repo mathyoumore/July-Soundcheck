@@ -5,11 +5,11 @@ th, td {
 
 a:link, a:active, a:visited, a:focus{
   color: $text-primary-color;
-  background-color: inherit;
 }
 
 a:hover{
   color: $primary-color;
+  background-color: inherit;
 }
 
 #notice{
@@ -43,4 +43,41 @@ td #low_score {
 
 td #high_score {
   color: $success-color;
+}
+
+.jumbotron-container{
+  background-color: #f2f2f2;
+  height: 300px;
+  margin-top: 2%;
+  .jumbotron {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.welcome-register-button {
+  @include button(
+    // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+    $padding: $button-med
+    // Background color. We can set $bg:false for a transparent background. Default: $primary-color.
+  );
+}
+
+.welcome-signin-button {
+
+  @include button(
+    // $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+    $padding: $button-med,
+    // Background color. We can set $bg:false for a transparent background. Default: $primary-color.
+    $bg: #AAA
+  );
+}
+
+.welcome-recent-tweets {
+  margin: 10px 0;
+  padding: 5px;
+  font-size: 1.3em;
+  text-align: center;
+  background-color: #f2f2f2;
 }

@@ -4,6 +4,7 @@ JulySoundcheck Wish list
   [ ] Cleverer search bar (confirmed artist should search through that artists' albums)
 [X] Nice(r) formatting, either bootstrap or foundation front endedness
 [X] Paginate search results so pages don't load 300 albums
+[ ] Sortable index pages with pagination
 [ ] Write integration specs using Capybara
   - Ryan Bates' "How I test"
   - Factory Girl
