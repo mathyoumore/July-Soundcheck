@@ -10,6 +10,13 @@ July Soundcheck takes you outside of your comfort zone and asks you to explore w
 
 The July Soundcheck website is for organizing this whole affair in a nice package. Artists, albums, and reviews are searchable and sortable. Users can register and review their albums when they finish them. This application is a lot more organized than the old system - a Google sheet document somewhere. The app will also encourage and allow people to write longer reviews after July to explain why they loved the albums they loved.
 
+## To contribute
+1. Fork this repo
+2. `bundle install`
+3. `bundle exec rake db:setup`
+4. Do your thing in another branch
+5. Open a PR
+
 ## Coming soon
 [ ] Global search over artists, albums, users, reviews  
 [ ] Last.fm integration for band and album information, and listening accountability  
